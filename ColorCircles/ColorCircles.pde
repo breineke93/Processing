@@ -5,14 +5,27 @@ float pos_color;
 float x, y;
 int size=25;
 int numberx, numbery;
+PGraphics mask, circles;
 
 void setup() {
-  size(1000, 1000);
+  size(1980, 1080);
   noStroke();
+  mask=createGraphics(width, height);
+  circles=createGraphics(width, height);
+  blendMode(BLEND);
 }
 
 void draw() {
   noLoop();
+  drawCircles();
+  drawMask();
+  image(mask,0,0);
+  image(circles, 0, 0);
+  
+}
+
+void drawCircles() {
+  circles.beginDraw();
   x=size/2;
   y=size/2;
   numbery=height/size;
@@ -30,8 +43,21 @@ void draw() {
     }
     y+=size;
     x=size/2;
-    ;
   }
+  circles.endDraw();
+}
+
+void drawMask() {
+  mask.beginDraw();
+  //background(0);
+  fill(255,255,255,255);
+  int posx=height/2;
+  for (int i=0; i<5; i++)
+  {
+    ellipse(posx, height/2, height, height);
+    posx+=height;
+  }
+  mask.endDraw();
 }
 
 void keyPressed() {
@@ -41,8 +67,8 @@ void keyPressed() {
       redraw();
     }
     if (keyCode==DOWN) {
-      if (size>10) {
-        size-=10;
+      if (size>50) {
+        size-=50;
         redraw();
       } else {
         return;
