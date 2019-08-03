@@ -12,15 +12,16 @@ void setup() {
   noStroke();
   mask=createGraphics(width, height);
   circles=createGraphics(width, height);
-  blendMode(BLEND);
+  hint(ENABLE_DEPTH_SORT);
+  
 }
 
 void draw() {
   noLoop();
   drawCircles();
   drawMask();
-  image(mask,0,0);
-  image(circles, 0, 0);
+  circles.mask(mask);
+  image(circles,0,0);
   
 }
 
@@ -49,8 +50,7 @@ void drawCircles() {
 
 void drawMask() {
   mask.beginDraw();
-  //background(0);
-  fill(255,255,255,255);
+  fill(255,0,0);
   int posx=height/2;
   for (int i=0; i<5; i++)
   {
