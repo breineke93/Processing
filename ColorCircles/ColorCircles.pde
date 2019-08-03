@@ -31,6 +31,7 @@ void draw() {
   back.endDraw();
   image(back, 0, 0);
   image(circles, 0, 0);
+  save("colorCircles.png");
 }
 
 void drawCircles() {
