@@ -12,3 +12,4 @@ Draws an image of circles first, colored using gradients. Then, it uses a mask i
 * Make it look artistic...
 * Clean up code
 * Better center the mask circles when changing the amount of rows
+* Better determine the Nr. of mask circles to draw regarding the size of the image (never clipped)
