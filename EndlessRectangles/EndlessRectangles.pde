@@ -1,7 +1,7 @@
-/* //<>// //<>// //<>//
+/* //<>//
 GNU GPLv3
- https://github.com/breineke93/Processing/
- */
+https://github.com/breineke93/Processing/
+*/
 
 float x, y, rot, a, safe;
 int iterations;
