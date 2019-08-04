@@ -1,4 +1,9 @@
-color start=color(204, 102, 0); //<>// //<>// //<>// //<>//
+/* //<>//
+GNU GPLv3
+https://github.com/breineke93/Processing/
+*/
+
+color start=color(204, 102, 0);
 color inter;
 color end=color(0, 102, 153);
 float pos_color;

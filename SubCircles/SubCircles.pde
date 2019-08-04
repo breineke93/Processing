@@ -1,4 +1,9 @@
-int startNumber, numberCurrent, passes, currentPass; //<>//
+/* //<>//
+GNU GPLv3
+https://github.com/breineke93/Processing/
+*/
+
+int startNumber, numberCurrent, passes, currentPass;
 float widthCircle;
 color start, end, inter;
 
