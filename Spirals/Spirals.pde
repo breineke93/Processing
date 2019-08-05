@@ -1,3 +1,8 @@
+/*
+GNU GPLv3
+https://github.com/breineke93/Processing/
+*/
+
 int iterations, sizeStart, sizeNew;
 float x, y, rotation, initialRot;
 color col;
