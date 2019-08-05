@@ -27,7 +27,7 @@ void drawCircles() {
   y=height/2; //draw at half the image height
   x=0+width/startNumber/2; //start at left edge of image (offset is half the circle size)
   numberCurrent=startNumber; //set the current iteration nr to the start number
-  colorPos=0.0; //begin with start color
+  colorPos=0.0; //begin with start color HERE MIGHT BE AN ERROR - set to 0 and then ??
   for (int i=0; i<passes; i++) { //loop through the passes
     colorPos=(float)i/passes; //calculate the current position in the gradient
     if (width/numberCurrent<=height) //make sure circle always fits in image y-wise
