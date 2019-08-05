@@ -3,32 +3,27 @@ float x, y, rotation, initialRot;
 color col;
 boolean mirrorX, mirrorY=false;
 boolean isCircle, isSquare;
+
 void setup() {
   size(1200, 900);
-  isCircle=true;
-  isSquare=false;
-  sizeStart=100;
-  x=width/2;
-  y=height/2;
-  initialRot=0.0;
-  rotation=20.0;
-  iterations=10;
-  ellipseMode(CENTER);
-  col=color(200, 200, 200, 35);
-  noStroke();
-  randomize();
+  isCircle=true; //let's start with circles
+  isSquare=false; //so we turn off squares
+  rotation=20.0; //this is a sane default
+  ellipseMode(CENTER); //draw the circles with coordinates of the center
+  noStroke(); //turn off stroke
+  randomize(); //generate some random starting values to draw
 }
 
 void draw() {
   noLoop();
-  background(25);
-  generateSwirl();
+  background(25); //set the background to a very dark gray
+  generateSwirl(); //drawing happens
 }
 
 void generateSwirl() {
-  fill(col);
+  fill(col); //set fill to the generated color
   sizeNew=sizeStart;
-  pushMatrix();
+  pushMatrix(); //save coordinates
   translate(x, y);
   rotate(radians(initialRot));
   if (isCircle) {
@@ -37,24 +32,24 @@ void generateSwirl() {
       sizeNew+=50;
       rotate(radians(rotation));
     }
-    popMatrix();
+    popMatrix(); //restore coordinates
   }
   if (isSquare) {
     for (int i=0; i<iterations; i++) {
-      rect(-sizeNew/2, 0, sizeNew, sizeNew);
+      rect(0, 0, sizeNew, sizeNew);
       sizeNew+=50;
       rotate(radians(rotation));
     }
-    popMatrix();
+    popMatrix(); //restore coordinates
   }
 }
 
-void randomize() {
-  x=random(50,width-50);
-  y=random(50,height-50);
+void randomize() { //for x,y there is a 50 safety margin
+  x=random(50, width-50);
+  y=random(50, height-50);
   initialRot=random(360);
-  sizeStart=(int)random(20,200);
-  iterations=(int)random(3,25);
+  sizeStart=(int)random(20, 200);
+  iterations=(int)random(3, 25);
   generateColors();
 }
 
@@ -119,9 +114,9 @@ void keyPressed() {
       isSquare=false;
       redraw();
       break;
-      
-      case 'b':
-      col=color(200,200,200,35);
+
+    case 'b':
+      col=color(200, 200, 200, 35);
       redraw();
       break;
 
@@ -159,5 +154,4 @@ void keyPressed() {
 
     //maybe we can put the redraw after the if conditionals? so we redraw in the end.
   }
-
 }
