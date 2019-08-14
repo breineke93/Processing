@@ -10,7 +10,7 @@ Draws an image of circles first, colored using gradients. Then, it uses a mask i
 * Change amount of rows for mask circles: a (less) and d (more)
 * Save image: i
 
-## To-Do:
+## To-Do
 * Use better colors(?) (use harmonic colors)
 * Make it look artistic...
 * Clean up code
