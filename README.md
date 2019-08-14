@@ -15,3 +15,7 @@ Draws differently rounded rectangles colored by a gradient. Can switch to "two-c
 
 ## Spirals
 Uses alpha transparency of shapes to create seashell like structures in different colors.
+
+### Currently working on:
+Strips
+IsoTowers
