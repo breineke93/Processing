@@ -1,5 +1,8 @@
 # ColorCircles
 Draws an image of circles first, colored using gradients. Then, it uses a mask image (also drawn) to mask out most of the circles, cutting down on visual noise.
+
+![](ColorCircles.png)
+
 ## Controls
 * Change size of mask circles: Left (smaller) and right (larger)
 * Change size of background circles: Up (larger) and down (smaller)
