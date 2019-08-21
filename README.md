@@ -16,6 +16,12 @@ Draws differently rounded rectangles colored by a gradient. Can switch to "two-c
 ## Spirals
 Uses alpha transparency of shapes to create seashell like structures in different colors.
 
+## Strips
+Draws columns  of blocks, colored using gradients that are randomly shifted in Y-direction. Can give the appeareance of towers, rain etc.
+
+## IsoTowers
+Faking isometric perspective: Using the rhombus shape, pseudo-3D looking towers are drawn in different color variations.
+
 ### Currently working on:
 Strips
 IsoTowers
