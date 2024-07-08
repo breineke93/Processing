@@ -8,11 +8,14 @@ boolean frame=true;
 boolean inverted=false;
 int amount;
 
-void setup(){
-sizeX=1200;
+void settings()
+{
+  sizeX=1200;
 sizeY=900;
+size(sizeX, sizeY);}
+
+void setup(){
 padding=sizeX*0.05;
-size(1200, 900);
 amount=100;
 length=10;
 thickness=4;
@@ -25,6 +28,7 @@ frameColor=color(255,255,255);
 }
 generateColors();
 }
+
 
 void draw(){
 noLoop();
@@ -42,9 +46,10 @@ if(frame){drawFrame();drawLabel("Floaters","2024");}
 void drawFrame(){
 noStroke();
 if(!inverted){
-fill(255);
+fill(255);  
+frameColor=color(0,0,0);
 }
-else{fill(#030202);}
+else{fill(#030202);frameColor=color(255,255,255);}
 rect(0,0,sizeX,padding);
 rect(0,0,padding,sizeY);
 rect((sizeX-padding),0,padding,sizeY);
