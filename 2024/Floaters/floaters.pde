@@ -5,6 +5,7 @@ int sizeX, sizeY;
 int length;
 int thickness;
 boolean frame=true;
+boolean inverted=false;
 int amount;
 
 void setup(){
@@ -15,14 +16,22 @@ size(1200, 900);
 amount=100;
 length=10;
 thickness=4;
+if(!inverted){
 textColor=color(0,0,0);
-frameColor=color(0,0,0);
+frameColor=color(0,0,0);}
+else{
+textColor=color(255,255,255);
+frameColor=color(255,255,255);
+}
 generateColors();
 }
 
 void draw(){
 noLoop();
-background(#FFFFFC);
+if(!inverted){
+background(#FFFFFC);}
+else{
+background(#555353);}
 for(int i=0; i<amount;i++)
 {
 drawFloater();
@@ -32,7 +41,10 @@ if(frame){drawFrame();drawLabel("Floaters","2024");}
 
 void drawFrame(){
 noStroke();
+if(!inverted){
 fill(255);
+}
+else{fill(#030202);}
 rect(0,0,sizeX,padding);
 rect(0,0,padding,sizeY);
 rect((sizeX-padding),0,padding,sizeY);
@@ -44,9 +56,9 @@ rect(padding,padding,(sizeX-2*padding),(sizeY-3*padding));
 }
 
 void drawLabel(String Title,String subTitle){
-fill(0,0,0);
+if(!inverted){fill(0,0,0);}
+else{fill(255,255,255);}
 textAlign(CENTER);
-fill(textColor);
 textSize(60);
 PFont font;
 font=loadFont("serif.vlw");
@@ -85,6 +97,10 @@ redraw();
 break;
 case 's':
 save("floaters.png");
+break;
+case 'i':
+inverted=!inverted;
+redraw();
 break;
 }
 }
